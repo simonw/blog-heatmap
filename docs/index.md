@@ -13,12 +13,10 @@ Based on the [simplified calendar](https://observablehq.com/@observablehq/plot-s
 ```js
 Plot.plot({
   padding: 0,
+  aspectRatio: 1,
   x: {axis: null},
-  y: {
-    tickFormat: Plot.formatWeekday("en", "narrow"),
-    tickSize: 0,
-  },
-  fy: {tickFormat: ""},
+  y: {tickFormat: Plot.formatWeekday("en", "narrow"), tickSize: 0},
+  fy: {tickFormat: "", padding: 0.1},
   color: {scheme: "PiYG", domain: [0, 10]},
   marks: [
     Plot.cell(days, {
@@ -33,14 +31,15 @@ Plot.plot({
         var d = new Date(d.day);
         return `https://simonwillison.net/${d.getFullYear()}/${d.toLocaleString(
           "en-us",
-          { month: "short" }
+          {month: "short"}
         )}/${d.getDate()}/`;
       },
-      target: "_blank",
+      target: "_blank"
     })
   ]
 })
 ```
+
 ```js
-const days = FileAttachment("./data/blog-days.json").json()
+const days = FileAttachment("./data/blog-days.json").json();
 ```
