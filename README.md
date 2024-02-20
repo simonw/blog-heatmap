@@ -1,5 +1,9 @@
 # Blog Heatmap
 
+Project deployed here: https://simonw.github.io/blog-heatmap/
+
+---
+
 This is an [Observable Framework](https://observablehq.com/framework) project. To start the local preview server, run:
 
 ```
